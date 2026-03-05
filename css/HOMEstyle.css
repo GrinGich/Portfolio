@@ -1,73 +1,7 @@
-html{
-    scroll-behavior:  smooth;
-}
-body{
-    background: rgb(36, 36, 36);
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden ;
-}
-.navigation {
-    position: sticky;
-    background-color: rgb(26,26,26);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    top: 0;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-    z-index: 15;
-}
-.nav-left {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-.nav-right {
-    display: flex;
-    gap: 1.5rem;
-    grid-column: 3;
-    align-items: center;
-}
-.nav-right li,a{
-    color: white;
-    text-decoration: none;
-}
-h1 {
-    color: white;
-}
-header{
-    background-color: rgb(26, 26, 26);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-footer{
-    padding: 10px 20px;
-}
+
 section{
     display: flex;
     flex-direction: row;
-}
-ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-li{
-    display: inline-block;
-    margin: 0 20px 0;
-}
-.contact{
-    background: rgb(0, 132, 255);
-    color: white;
-    padding: 15px;
-    border-radius: 20px;
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
 }
 .Intro{
     position: relative;
@@ -280,15 +214,40 @@ footer{
     position: absolute;
     height: 15%;
     width: 100%;
-    background-color: rgb(0,0,120);
+    background-color: rgb(26, 26, 61);
     text-align: center;
 }
-footer a{
-     
-}
-footer h1{
- 
-}
-footer p1{
 
+.Linkedin img{
+   height: 4vh;
+    position:absolute;
+    left: 10%;
+    top: 45%;
 }
+.back2top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1417dc;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+.back2top span{
+    color: white;
+    font-size: 2rem;
+    transition: 0.2s ease-out;
+}
+.back2top:hover{
+    background-color: #1d1abe;
+}
+.back2top:hover span{
+    transform: translateY((1rem));
+}
+
+
+
