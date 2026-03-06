@@ -62,3 +62,26 @@ li{
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
 }
+[popover]{
+    border: 1px solid black;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    margin-right: 0%;
+    margin-top: 4.25%;
+
+    background-color: rgb(39, 36, 36);
+}
+.innerBorder{
+    background-color: rgb(61, 65, 65);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+#ContactInfo{
+    font-size: large;
+    color: aliceblue;
+}
+[popover]::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+}

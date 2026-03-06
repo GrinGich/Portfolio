@@ -243,6 +243,10 @@ footer{
     background-color: rgb(26, 26, 61);
     text-align: center;
 }
+footer h1{
+    margin-top: 2.5%;
+    font-size: large;
+}
 
 .Linkedin img{
    height: 4vh;
