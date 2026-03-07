@@ -30,24 +30,46 @@
                 </div>
             </div>
         </nav>
+        <img src="../../Images/FRIGHTLINE_THUMBNAIL.png" class="Background">
         <div class="root">
-            <h id="title">Group Project: 3 <br> Frightline</h>
+            <h id="title">Group Project 3:  <br> Frightline</h>
             <div class="overview">
                     <div class="specs">
                             <p>
-                                Genre: Tool <br><br>
-                                Engine: Unreal Engine 5 <br><br>
-                                Editor: Angelscript <br><br>
+                                Genre: Horror, Puzzle <br><br>
+                                Engine: Unity <br><br>
                                 Platform: PC  <br><br>
+                                Team Size: 16 <br><br>
                                 Time: 4 weeks <br>
                             </p>
                     </div>
                     <div class="Summary"> <br>
-                        This project is aimed at making it easier to customize already existing cosmetics for purpose of creating variants of the same mesh. <br>
-                        <br>
-                        Scene: <a href="https://www.artstation.com/pckaffe">Christopher Lundkvist</a> <br>
-                        Mesh: <a href="https://fab.com/s/a6558355c0d3"> a.moreno ( Fab ) </a>
+                        FrightLine was the third game project at PlaygroundSquad. The Game is atmospheric puzzle "horror" game where the player has to utilise their doll form but also interact through the spirit world.
+                         <br>
+                         <br>
                     </div>
+                </div>
+                <div class="video1">
+                    <video src="../../Videos/FrightlineMenuPreview.mp4" loop muted></video>
+                    <p>In FrightLine I was in charge of UI for both the main menu and the in-game ui such as the pause menu. 
+                        <br>
+                         The UI is designed in a way that makes it easy to add new elements, one such way is the plug and play button. All you need to do is specify select what type of button it is and it will set all the settings necessary.
+                         <br> 
+                         <br>
+                         Another important design philosophy was ease of use, this meant that I wanted to avoid having messing scripts or way to many different assets for every type of button.
+                         To do this I made a master button script where every button was located, then changed it so that in a dropdown you specify which button is and then only display the relevant exposed variables to that button type.
+                    </p>
+                </div>
+                <div class="picture1">
+                    <p>
+                        I've also helped develop the interaction system, Where the player calls either the Interact or spirit interact depending on which the player is in.
+                        <br>
+                        <br>
+                        <br> Then any gameobject in the vicinity inheriting form "Base-Interactable" has the previously mentioned functions that it can override with its interact action.
+                        <br> <br> To help out the designers we developed some presets and made it controllable from the editor, where they can choose for their needs; Interaction type,control type and if the player can directly interact or a third party has to do it or if its single use.
+
+                    </p>
+                    <img src="../../Images/FrightlineInteractPreview.png">
                 </div>
         </div>
 
