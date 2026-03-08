@@ -31,7 +31,11 @@ body{
     grid-column: 3;
     align-items: center;
 }
-.nav-right li,a{
+.nav-right li{
+    color: white;
+    text-decoration: none;
+}
+.nav-right a{
     color: white;
     text-decoration: none;
 }
@@ -53,6 +57,10 @@ ul{
 li{
     display: inline-block;
     margin: 0 20px 0;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 .contact{
     background: rgb(28, 26, 188);
