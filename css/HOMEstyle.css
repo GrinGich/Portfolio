@@ -1,221 +1,223 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-section{
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:#f8fafc;
+    overflow-x:hidden;
+}
+
+.Intro{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+/* Background Slider */
+
+.infinite-track{
+    position:absolute;
+    inset:0;
+    display:flex;
+    width:200%;
+    animation:scrollHorizontal 30s linear infinite;
+    z-index:-2;
+}
+
+.infinite-track img{
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    filter:blur(4px) brightness(0.4);
+}
+
+/* Dark overlay */
+
+.Intro::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(15,23,42,0.6);
+    z-index:-1;
+}
+
+.SelfIntro{
+    margin-top: -7.5rem;
     display: flex;
     flex-direction: row;
-}
-.Intro{
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 80px);
-    overflow: hidden;
-    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 3rem;
     
+    padding: 1.5rem;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:0.3s ease;
+    backdrop-filter:blur(10px);
 }
-.titleName{
-    position: absolute;
-    top: 40%;
-    left: 25%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    width: 40vw;
-    height: auto;
-    text-align: center;
-    color: white;
-    pointer-events: none;
-    font-family: 'Courier New', Courier, monospace;;
-    background-color: rgb(26,26,26,0.85);
-    border-radius: 2.5rem;
-    
-}
-.titleName p1{
-font-size: 4vw;
-    word-spacing: -7px;
-    font-weight: 300;
-    text-wrap: nowrap;
 
+/* TEXT */
+
+.titleName{
+    text-align: center;
 }
+
+.titleName p1{
+    font-size:clamp(3rem,3vw,3rem);
+    font-weight:800;
+    line-height:1;
+    text-align: center;
+   
+}
+
 .titleName p4{
-    font-size: 2vw;
-    word-spacing: -7px;
-    font-weight: 300;
-    text-wrap: nowrap;
-    
+    margin-top:1rem;
+    font-size:1.2rem;
+    color:#cbd5e1;
+    line-height:1.7;
+    text-align: center;
 }
+
+/* PROFILE IMAGE */
 
 .profilePic{
-    width: 50vw;
-    position: absolute;
-     z-index: 10;
-     top: 40%;
-    right: 30%;
-    transform: translate(50%,-50%);
-    clip-path: circle(30%);
-    border-color: black;
-}
-.IntroShutoff{
-    position: absolute;
-    z-index: 9;
-    width: 100%;
-    height: 12vh;
-    bottom: 0%;
-    background-color: rgb(26,26,26);
-
+    width:320px;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:50%;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
 }
 
-.WelcomeImage{
-    height: 100%;
-    z-index: -100;
-    object-fit: cover;
-    object-position: center;
-}
-.infinite-track{
-display: flex;
-width: calc(200% + 40px);
-animation: scrollHorizontal 20s linear infinite;
-}
-.infinite-track img{
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    filter: blur(1rem);
-}
-@keyframes scrollHorizontal {
-    0% { transform: translateX(0);}
-    100% { transform: translateX(-99%);}
-}
+/* SCROLL INDICATOR */
 
 .SeeMore{
-    z-index: 10;
-    position: absolute;
-    margin: 0 auto;
-    transform: translate(-50%,-50%);
-    bottom: 10%;
-    left: 50%;
+    position:absolute;
+    bottom:5rem;
+    left:50%;
+    animation:bobbing 2s infinite ease-in-out;
 }
 
-.scroll-down {
-    position: absolute;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    text-wrap: nowrap;
-    animation: bobbing 2s infinite ease-in-out;
-    
+.scroll-down{
+    color:white;
+    text-decoration:none;
+    animation:bobbing 2s infinite;
+    opacity:0.8;
 }
 
-.arrow{    
-    display: inline-block;
-    padding: 5%;
-    width: 55%;
-    
-    margin-top: 10px;
-}
-@keyframes bobbing {
-    0%, 100% { transform: translate(-50%,0);}
-    50% {transform: translate(-50%, -15%);}
-}
-
+/* PROJECT SECTION */
 
 #ProjectPreview{
-    width: auto;
-    height: auto;
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center;
-    row-gap: 2rem;
-    column-gap: 2rem;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:2rem;
+    padding:5rem;
+    max-width:1400px;
+    margin:auto;
 }
-    .projectView{
-        width: auto;
-    height: 50vh;
-    background-color: rgb(94, 94, 94,0.5);
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    border-radius: 1rem;
+#ProjectPreview h1{
+    position: absolute;
+    margin-top: -4rem;
+}
+.projectView{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:0.3s ease;
+    backdrop-filter:blur(10px);
+}
 
+
+.projectView:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.ProjectIMGs img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.ProjectText{
+    padding:1.5rem;
+}
+
+.projectTitle{
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.projectSubject{
+    margin-top:1rem;
+    color:#94a3b8;
+    line-height:1.6;
+}
+
+/* TECH TAGS */
+
+.projectSoftware{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    margin-top:0.5rem;
+    padding: 0.5rem;
+}
+
+.projectSoftware span{
+    padding:0.5rem 1rem;
+    border-radius:999px;
+    background:#2563eb;
+    font-size:0.85rem;
+    font-weight:600;
+
+}
+
+/* ANIMATIONS */
+
+@keyframes scrollHorizontal{
+    from{
+        transform:translateX(0);
     }
-        .ProjectText{
-            display: flex;
-            flex-direction: column;
-        }
-            .projectTitle{
-                font-size: 2vw;
-                font-weight: 900;
-            }
-            .projectSubject{
-                font-size: 1.3vw;
-            }
-
-        .ProjectIMGs{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 6px 12px;
-        }
-        .ProjectIMGs img{
-            width: 20vw;
-            height: auto;
-            border-radius: 1rem;
-        }
-            .projectSoftware{
-                display: flex;
-                gap: 10px;
-                flex-wrap: wrap;
-                
-            }
-            .projectSoftware span{
-                background: royalblue;
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 0.75rem;
-                color: whitesmoke;
-            }
-            .projectSoftware img{
-                width: 10vw;
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-h2{
-   
-    margin: 0 auto;
-    margin-top: 5%;
-    right: 50%;
-    font-size: xxx-large;
-    height: 5%;
-}
-.articleDesc{
-    display: flex;
-    flex-direction: column;
-
-}
-.articleDesc p2{
-    margin-top:35%;
-    font-size: xx-large;
-    width: 45rem;
-    z-index: 11;
+    to{
+        transform:translateX(-50%);
+    }
 }
 
+@keyframes bobbing{
+    0%,100%{
+        transform:translate(-50%, 0);
+    }
+    50%{
+        transform:translate(-50%, -12px);
+    }
+}
 
+/* RESPONSIVE */
 
+@media(max-width:900px){
 
+    .hero-content{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
 
+    .profilePic{
+        width:220px;
+    }
+
+    #ProjectPreview{
+        padding:2rem;
+    }
+
+}
