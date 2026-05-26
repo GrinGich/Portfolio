@@ -1,52 +1,222 @@
+
+body{
+    margin:0;
+    padding:0;
+
+    font-family:'Inter', sans-serif;
+
+    background:#0f172a;
+    color:#f8fafc;
+
+    overflow-x:hidden;
+}
+
 .holder{
-display: flex;
-flex-direction: column;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:6rem 2rem;
 }
+
+.AboutSection{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4rem;
+
+    width:min(1400px, 90%);
+
+    padding:2.5rem;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.35);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.AboutSection::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(37,99,235,0.15),
+        transparent 40%
+    );
+
+    pointer-events:none;
+}
+
 .portrait{
-    width: 20vw;
-    height: auto;
-    margin-left: 20rem;
-    margin-top: 10rem;
-    clip-path: circle(50%);
-    object-fit: cover;
-    object-position: center;
+    width:320px;
+    aspect-ratio:1;
+
+    object-fit:cover;
+    object-position:center;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.45);
+
+    transition:transform 0.4s ease;
+    margin-top: -2rem;
 }
+
+.portrait:hover{
+    transform:scale(1.03);
+}
+
 .AboutMeText{
-    position: absolute;
-width: 45vw;
-height: auto;
-background-color: rgb(16, 16, 16);
-margin-left: calc(20rem + 30rem);
-margin-top: 22.5vh;
-padding-bottom: 2rem;
-padding-left: 1rem;
-padding-right: 1rem;
-border-radius: 5rem;
-text-align: center;
+    width:100%;
+    max-width:650px;
+
+    margin-top: 3rem;
+
+    padding:2rem;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(10px);
+
+    position:relative;
 }
+
+.AboutMeText h1{
+    font-size:clamp(2rem, 4vw, 3.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:1rem;
+
+    color:#f8fafc;
+}
+
+.AboutMeText p{
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+}
+
 .AboutMeText2{
-width: 45vw;
-height: auto;
-background-color: rgb(16, 16, 16);
+    width:min(1200px, 90%);
 
-padding-bottom: 2rem;
-padding-left: 1rem;
-padding-right: 1rem;
-border-radius: 5rem;
-text-align: center;
+    margin:1rem auto 0 auto;
 
-margin-top: 5rem;
-margin-left: 7.5rem;
+    padding: 2rem;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.3);
+
+    text-align:center;
 }
-.AboutMeText p1{
-    font-size: 1vw;
-    width: 35vw;
+
+.AboutMeText2 h2{
+    font-size:2rem;
 }
+
+.AboutMeText2 p{
+    color:#94a3b8;
+    line-height:1.8;
+    font-size:1rem;
+}
+
 .PixelArtHolder{
-    display: flex;
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+    margin-top:2rem;
 }
 
 .pixelart{
-    width: 5vw;
-    height: auto;
+    width:80px;
+    height:auto;
+
+    transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.pixelart:hover{
+    transform:translateY(-8px) scale(1.08);
+
+    filter:drop-shadow(
+        0 10px 20px rgba(37,99,235,0.4)
+    );
+}
+
+@media(max-width:900px){
+
+    .AboutSection{
+        flex-direction:column;
+        text-align:center;
+
+        gap:2rem;
+    }
+
+    .portrait{
+        width:240px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .holder{
+        padding:4rem 1rem;
+    }
+
+    .AboutSection,
+    .AboutMeText2{
+        padding:1.5rem;
+    }
+
+    .AboutMeText h1{
+        font-size:2rem;
+    }
+
+    .AboutMeText p,
+    .AboutMeText2 p{
+        font-size:0.95rem;
+    }
+
+    .pixelart{
+        width:60px;
+    }
+
 }

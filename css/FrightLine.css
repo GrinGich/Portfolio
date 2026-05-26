@@ -11,6 +11,14 @@
      padding-top: 20vh;
      margin-top: 45rem;
 }
+body{
+    background: rgb(36, 36, 36);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden ;
+}
 .Background{
 position: fixed;
 width: 100%;

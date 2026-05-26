@@ -10,6 +10,14 @@
      text-align      : center; 
      padding-top: 20vh;
 }
+body{
+    background: rgb(36, 36, 36);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden ;
+}
 #title{
     font-size: 4vw;
     font-weight: 500;
