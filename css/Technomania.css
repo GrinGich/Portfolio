@@ -11,6 +11,9 @@ body{
     overflow-x:hidden;
     line-height:1.7;
 }
+.filler{
+    height: 32rem;
+}
 
 .Background{
     position:fixed;
@@ -21,11 +24,7 @@ body{
 
     object-fit:cover;
 
-    filter:
-    blur(8px)
-    brightness(0.25);
-
-    z-index:-2;
+    z-index:-5;
 }
 
 body::before{
@@ -38,6 +37,13 @@ body::before{
     rgba(15,23,42,0.75);
 
     z-index:-1;
+
+        /* Link the animation to the page's vertical scroll timeline */
+    animation: fadeInBackground linear both;
+    animation-timeline: scroll();
+  
+    /* The range of the scroll where the animation happens (e.g., first 500px) */
+    animation-range: entry 0px exit 500px; 
 }
 
 
@@ -261,4 +267,14 @@ body::before{
         font-size:0.95rem;
     }
 
+}
+@keyframes fadeInBackground {
+  from {
+    background-color: rgba(255, 255, 255, 0); 
+    filter: blur(0px);
+  }
+  to {
+    background-color: rgb(15,23,42,1); 
+    filter: blur(100px);
+  }
 }
