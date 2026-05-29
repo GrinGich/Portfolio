@@ -46,8 +46,7 @@
         <div class="filler"></div>
         <div class="root">
             
-            <h id="title">Game Project 4:  <br> <a href="https://thrimazon.itch.io/bat-out-of-hell">Bat out of hell</a></h>
-            
+            <div class="titleContainer"><h id="title">Game Project 2:  <br> <a href="https://thrimazon.itch.io/bat-out-of-hell">Bat Out Of Hell</a></h></div>
 
             <div class="overview">
                     <div class="specs">
@@ -69,24 +68,36 @@
                     </div>
             </div>
                 <div class="video1">
+                    <div class="titleAndPicture">
+                    <h2>Enemy Behaviour</h2>
                     <img src="../../Images/BOOHENEMYBEHAVIOR.png">
+                    </div>
                     <ul class = bulletPoints>
-                        <li><u>Information</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li> 
+                        <li><u>Behaviour</u> of the enemies comes down to a series of actions they are supposed to do.
+                        <br><br> > Locate the player seeing if they have a line of sight to the player.
+                        <br> > Navigate towards the player to get in range of their attack range.
+                        <br> > Attack the player, either by firing from range or leaping towards the player.
+                        </li> 
                         <br><br>
-                        <li><u>HUD</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li>
+                        <li><u>Navigation</u> for the enemies are based around the navmesh areas we designate.
+                        <br>To avoid performance problems I remade the Unity premade navigation that calculates a new path every frame if the player moves.
+                            Into a new navigation script that calculates a new path while the enemy is moving and only starts a new calculation if the previous one is finished and set. </li>
                         <br><br>
-                        <li><u>Effects</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li>
                     </ul>
                 </div>
                 <div class="picture1">
                     <ul class = bulletPoints>
-                        <li><u>Compass</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li>
+                        <li><u>Commands</u> made from unity actions with input from a command console in-game, type out the command and the console compares the typed out text to any existing commands and excutes them.</li>
                         <br><br>
-                        <li><u>Playstation 5</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li> 
+                        <li><u>Debugging</u> with the command console becomes easier, because the console is ingame, it means an easier time debugging,recording or any other non core gameplay task that needs doing inside builds becomes easier.</li> 
                         <br><br>
-                        <li><u>Controller</u> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper lectus elit, sollicitudin porta justo dignissim non. Morbi massa urna, iaculis at gravida ac, malesuada in ex. Vivamus euismod, tortor.</li>
+                        <li><u>Designers</u> the system is made to be easy to use for the designers, with ease of use like forcing all typed text to be lower case to make input consistent or the help command that displays all the currently available commands. 
+                        <br> Another big plus ease of making a new command, just make the action,function for whats going to happen and </li>
                     </ul>
+                    <div class="titleAndPicture">
+                    <h2>Console Commands</h2>
                     <img src="../../Images/BOOHCommands.png">
+                    </div>
                 </div>
         </div>
         

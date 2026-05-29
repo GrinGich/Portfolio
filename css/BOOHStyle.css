@@ -11,8 +11,8 @@ body{
     overflow-x:hidden;
     line-height:1.7;
 }
-.filler{
-    height: 32rem;
+.filler::after{
+    height: 100%;
 }
 
 .Background{
@@ -47,11 +47,10 @@ body::before{
 }
 
 
-
 .root{
     width:min(1300px, 92%);
 
-    margin:8rem auto 6rem auto;
+    margin:3rem auto 6rem auto;
 
     display:flex;
     flex-direction:column;
@@ -61,6 +60,11 @@ body::before{
 }
 
 #title{
+    position: sticky;
+    top: 40vh;
+    max-height: 100vh;
+
+    margin-top: -16vh;
     font-size:
     clamp(2.8rem, 6vw, 5rem);
 
@@ -70,7 +74,22 @@ body::before{
 
     line-height:1.1;
 
-    color:#f8fafc;
+    color:rgba(248, 250, 252,1);
+
+    z-index: 10;
+
+    animation: fadeinTitle linear both;
+    animation-timeline: scroll();
+    animation-range: entry 0px exit 500px; 
+}
+.titleContainer{
+width: 100vw;
+height: 100vh;
+
+
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 #title a{
@@ -78,6 +97,10 @@ body::before{
     text-decoration:none;
 
     transition:0.3s ease;
+
+    animation: fadeinTitleLink linear both;
+    animation-timeline: scroll();
+    animation-range: entry 0px exit 500px; 
 }
 
 #title a:hover{
@@ -193,6 +216,19 @@ body::before{
     box-shadow:
     0 15px 40px rgba(0,0,0,0.4);
 }
+.titleAndPicture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+.titleAndPicture h2{
+     text-align: center;
+     font-size: 2vw;
+     font-family:'Inter',sans-serif;
+     color: #60a5fa;
+}
 
 .bulletPoints{
     padding-left:1.5rem;
@@ -274,6 +310,22 @@ body::before{
     background-color: rgba(255, 255, 255, 0); 
   }
   to {
-    background-color: rgb(15,23,42,0.75); 
+    background-color: rgba(15,23,42,0.85); 
+  }
+}
+@keyframes fadeinTitle {
+  from {
+    color: rgba(255, 255, 255, 0); 
+  }
+  to {
+    color: inherit;
+  }
+}
+@keyframes fadeinTitleLink {
+  from {
+    color: rgba(255, 255, 255, 0); 
+  }
+  to {
+    color: royalblue;
   }
 }
