@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2V5FHV90M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2V5FHV90M7');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/GLOBAlstyle.css">
+        <link rel="stylesheet" href="../../css/BOOHStyle.css">
+    <title>Bat Out Of Hell</title>
+</head>
+<body>
+    <nav class="navigation">
+            <div class="nav-left">
+                <h1><a href="../../index.html">Felix Groves</a></h1>
+                <a href="https://www.linkedin.com/in/felix-groves/" target="_blank" class="Linkedin">
+                <img id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Linkedin icon" id="LinkedinImg"/>
+
+                <a href="https://github.com/GrinGich" target="_blank" class="Github">
+                <img id="Github" src="../../Images/Github.png" alt="Github icon" id="GithubIcon"/>
+            </div>
+            <div class="nav-right">
+                <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../projectsPage.html">Projects</a></li>
+                <li><a href="../../aboutme.html">About</a></li>
+                <button class="contact" popovertarget="contactPopup">Contact</button>
+            </ul>
+            </div>
+            <div id="contactPopup" popover>
+                <div class="innerBorder">
+                    <h2 id="ContactInfo"><strong>Contact Information</strong></h2>
+                    <p><a href="mailto:FelixGroves6@gmail.com"><strong>Email:</strong> FelixGroves6@gmail.com</a></p>
+                    <p><a href="tel:+46-70-482-71-45"><strong>Phone:</strong> 70-482 71 45</a></p>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+        <img src="../../Images/FishGame.png" class="Background">
+        <div class="filler"></div>
+        <div class="root">
+            
+            <div class="titleContainer"><h id="title">Game Project 1:  <br> <a href="https://portal.playgroundsquad.com/students/projects/plenty-of-fish-in-the-sea">Sleeping With The Fishes</a></h></div>
+
+            <div class="overview">
+                    <div class="specs">
+                            <p>
+                                Genre: Visual Novel, Dating Sim <br><br>
+                                Engine: Tengine - Proprietary In-house Engine <br><br>
+                                Platform: PS5 - PC <br><br>
+                                Team Size: 16 <br><br>
+                                Time: 6 weeks <br>
+                            </p>
+                    </div>
+                    <div class="Summary"> <br>
+                        The First Game Project from PlaygroundSquad
+                        <br><br> Sleeping with The Fishes is a visual novel with various available minigames, Your goal is to get to know the colourful cast of characters.
+                            <br> <br>
+                            Developed at PlaygroundSquad by 16 students in 9 weeks.
+                         <br>
+                         <br>
+                    </div>
+            </div>
+
+            <div class="ContentTable">
+                <h2>What I did in this Project</h2>
+                <p> > UI System</p><br>
+                <p> > 2D Objects</p><br>
+                <p> > Dialog Tool Using JSON</p><br>
+                <p> > PS5 Optimization</p><br>
+            </div>
+
+
+
+                <div class="video1">
+                    <div class="titleAndPicture">
+                    <h2>UI Buttons</h2>
+                    <img src="../../Images/FishMenuRoom.png">
+                    </div>
+                    <ul class = bulletPoints>
+                        <li><u>Display</u> on the screen is not native to Tengine, Thus I had to use make my own screenspace images based on half done sprites/Quads from Tengine. </li> 
+                        <br><br>
+                        <li><u>Interaction</u>, By Looking at the bounds of the button and checking for the mouse and the layer the button is on, I am able to get mouse interaction with the UI. 
+                        <br><br>
+                        On the <u>Playstation 5</u>, using a list of available buttons on the screen i can cycle though them and activate the one the controller or "List" has highlighted.
+                        </li>
+                        <br><br>
+                    </ul>
+                </div>
+                <div class="picture1">
+                    <ul class = bulletPoints>
+                        <li><u>Designers</u> can easily input the dialog and surrounding choices inside a JSON script. </li>
+                        <br><br>
+                        <li><u>Choices</u> the designers can make are, Who is talking?, What is being Said?, Where is It being said? and what are the respons choices.
+                        <br> Designers can easily also change the order of the talking to easily pt in new lines where needed. </li> 
+                        <br><br>
+                        <li><u>Translation</u> from JSON reads the them in order specified and inputs the data read into a dialog struct list, this is where the background and pictures are set and the text accompanying the dialog is stored.
+                        <br> Translation happens on build and on run to make it easy to test and iterate on, making the dialog develpoment seamless for designers. </li>
+                    </ul>
+                    <div class="titleAndPicture">
+                    <h2>Dialog Tool</h2>
+                    <img src="../../Images/FishDialogTool.png" style="width: 60%;">
+                    </div>
+                </div>
+        </div>
+        
+</body>
+</html>
