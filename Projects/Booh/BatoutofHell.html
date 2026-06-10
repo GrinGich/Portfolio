@@ -86,7 +86,13 @@
                 <div class="video1">
                     <div class="titleAndPicture">
                     <h2>Enemy Behaviour</h2>
-                    <img src="../../Images/BOOHENEMYBEHAVIOR.png">
+                    <div class="slideshow">
+                        <img class="slide active" src="../../Images/BOOHENEMYBEHAVIOR.png" alt="">
+                        <video class="slide" controls src="../../Videos/EnemyAiTest.mp4"></video>
+
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
                     </div>
                     <ul class = bulletPoints>
                         <li><u>Behaviour</u> of the enemies comes down to a series of actions they are supposed to do.
@@ -112,10 +118,68 @@
                     </ul>
                     <div class="titleAndPicture">
                     <h2>Console Commands</h2>
-                    <img src="../../Images/BOOHCommands.png">
+                    <div class="slideshow">
+                        <img class="slide active" src="../../Images/BOOHCommands.png" alt="">
+                        <video class="slide" controls src="../../Videos/BOOHConsoleTest.mp4"></video>
+
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                </div>
                     </div>
                 </div>
         </div>
         
+
+<script>
+document.querySelectorAll(".slideshow").forEach(slideshow => {
+
+    const slides = slideshow.querySelectorAll(".slide");
+    const prevBtn = slideshow.querySelector(".prev");
+    const nextBtn = slideshow.querySelector(".next");
+    const counter = slideshow.querySelector(".slide-counter");
+
+    let current = 0;
+
+    function showSlide(index){
+
+        slides.forEach(slide => {
+
+            slide.classList.remove("active");
+
+            // Stop videos when hidden
+            if(slide.tagName === "VIDEO"){
+                slide.pause();
+                slide.currentTime = 0;
+            }
+        });
+
+        slides[index].classList.add("active");
+
+        const activeSlide = slides[index];
+activeSlide.classList.add("active");
+
+if(activeSlide.tagName === "VIDEO"){
+    activeSlide.play();
+}
+
+       if(counter){
+    counter.textContent =
+        `${index + 1} / ${slides.length}`;
+}
+    }
+
+    prevBtn.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    });
+
+    showSlide(current);
+});
+</script>
 </body>
 </html>
